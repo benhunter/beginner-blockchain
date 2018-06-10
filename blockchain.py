@@ -24,7 +24,6 @@ def makeTransaction(maxValue=3):
     alicePays = sign * amount
     bobPays = -1 * alicePays
 
-    # TODO have not checked for account overdraft
     return {'Alice':alicePays,'Bob':bobPays}
 
 
@@ -35,7 +34,6 @@ txnBuffer = [makeTransaction() for i in range(30)]
 def updateState(txn, state):
     '''
     Update the state.
-    TODO validate the transaction
     :param txn: keyed dictionary for transfer amount
     :param state: keyed dictionary for account balance
     :return: updated state, with additional users added to state if needed
